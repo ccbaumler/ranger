@@ -146,7 +146,7 @@ predict.ranger.forest <- function(object, data, predict.all = FALSE,
   
   x <- data
   
-  if (sum(!(forest$independent.variable.names %in% colnames(x))) > 0) {
+  if (sum(!(colnames(x) %in% forest$independent.variable.names)) > 0) {
     stop("Error: One or more independent variables not found in data.")
   }
 
